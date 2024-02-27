@@ -13,10 +13,20 @@ public class TextureFactory {
 	static public final int IMG_SZ = 84;
 	static private TextureFactory instance = null;
 	private Texture texture;
+	private Texture plantTexture;
+	private Texture bulletU;
+	private Texture bulletR;
+	private Texture bulletD;
+	private Texture bulletL;
 	public static HashMap<Class<?>, ArrayList<Texture>> map;
 	
 	private TextureFactory() {
 		texture = new Texture(Gdx.files.local("texturemap.png"));
+		plantTexture = new Texture(Gdx.files.local("plant.png")); // 加载 plant.png
+		bulletU= new Texture(Gdx.files.local("bulletU.png.png"));
+		bulletR= new Texture(Gdx.files.local("bulletR.png.png"));
+		bulletD= new Texture(Gdx.files.local("bulletD.png.png"));
+		bulletL= new Texture(Gdx.files.local("bulletL.png.png"));
 	}
 	
 	static public TextureFactory getInstance() {
@@ -46,6 +56,7 @@ public class TextureFactory {
 	
 		return sprites ;
 	}
+	
 
 
 	public Sprite[] getCharEnnemi() {
@@ -103,5 +114,26 @@ public class TextureFactory {
 	public static Texture getTexture(Class<?> o, int index) {
 		return map.get(o).get(index);
 	}
+	
+	public TextureRegion getPlant() {
+        return new TextureRegion(plantTexture); // 返回整个 plant.png 的 TextureRegion
+    }
+	
+	public TextureRegion getBulletUP() {
+		return new TextureRegion(bulletU);
+	}
+	
+	public TextureRegion getBulletDOWN() {
+		return new TextureRegion(bulletD);
+	}
+	
+	public TextureRegion getBulletLEFT() {
+		return new TextureRegion(bulletL);
+	}
+	
+	public TextureRegion getBulletRIGHT() {
+		return new TextureRegion(bulletR);
+	}
+	
 	
 }

@@ -1,6 +1,9 @@
 package com.mygdx.game;
 import java.util.List;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.utils.Json;
+
 public class MazeConfig {
     private BlockSize blockSize;
     private List<List<String>> maze;
@@ -42,4 +45,10 @@ public class MazeConfig {
     public void setMaze(List<List<String>> maze) {
         this.maze = maze;
     }
+    
+    public static MazeConfig loadConfig(String configFile) {
+        Json json = new Json();
+        return json.fromJson(MazeConfig.class, Gdx.files.internal(configFile));
+    }
+    
 }

@@ -4,13 +4,12 @@ import java.awt.Rectangle;
 
 public abstract class Object {
 	protected int textureIndex;
-	protected float x;    //Horizontal coordinate
-    protected float y;    //Vertical coordinate
+	protected float x;    //Hor
+    protected float y;    //Ver
     protected int width;    
     protected int height;   
     
     public Object(float x, float y) {
-    	super();
 		this.x = x;
 		this.y = y;
 		textureIndex = 0;

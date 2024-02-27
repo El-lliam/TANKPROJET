@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\core",
+    "\\core\\assets",
+    "\\core\\src",
+    "\\core\\src\\com",
+    "\\core\\src\\com\\mygdx",
+    "\\core\\src\\com\\mygdx\\game"
   ],
   "PreviewInSolutionExplorer": false
 }
